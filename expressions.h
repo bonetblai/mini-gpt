@@ -4,10 +4,10 @@
 #include "functions.h"
 #include "terms.h"
 #include "rational.h"
-#include "hashing.h"
 #include <assert.h>
 #include <iostream>
 #include <set>
+#include <tr1/unordered_map>
 
 class problem_t;
 class Application;
@@ -19,7 +19,7 @@ class Application;
  *
  ******************************************************************************/
 
-class ValueMap : public hashing::hash_map<const Application*,Rational> { };
+class ValueMap : public std::tr1::unordered_map<const Application*,Rational> { };
 
 class Expression
 {

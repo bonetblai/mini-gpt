@@ -1,17 +1,17 @@
 #ifndef TYPES_H
 #define TYPES_H
 
-#include "hashing.h"
 #include <iostream>
 #include <map>
 #include <string>
 #include <vector>
+#include <tr1/unordered_set>
 
 typedef int Type;
 const Type OBJECT_TYPE = 0;
 
 class TypeList : public std::vector<Type> { };
-class TypeSet : public hashing::hash_set<Type> { };
+class TypeSet : public std::tr1::unordered_set<Type> { };
 
 class TypeTable
 {

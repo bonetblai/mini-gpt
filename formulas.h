@@ -2,13 +2,13 @@
 #define FORMULAS_H
 
 #include "global.h"
-#include "hashing.h"
 #include "predicates.h"
 #include "terms.h"
 #include <iostream>
 #include <set>
 #include <vector>
 #include <list>
+#include <tr1/unordered_set>
 
 #ifdef TRUE
 #undef TRUE
@@ -29,7 +29,7 @@ class Problem;
 class FormulaList;
 
 class Atom;
-class AtomSet : public hashing::hash_set<const Atom*> { };
+class AtomSet : public std::tr1::unordered_set<const Atom*> { };
 class Disjunction;
 
 
