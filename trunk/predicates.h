@@ -2,14 +2,14 @@
 #define PREDICATES_H
 
 #include "types.h"
-#include "hashing.h"
 #include <iostream>
 #include <map>
 #include <string>
 #include <vector>
+#include <tr1/unordered_set>
 
 typedef int Predicate;
-class PredicateSet : public hashing::hash_set<Predicate> { };
+class PredicateSet : public std::tr1::unordered_set<Predicate> { };
 
 class PredicateTable
 {

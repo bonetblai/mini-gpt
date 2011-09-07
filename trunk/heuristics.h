@@ -8,6 +8,7 @@
 #include <iostream>
 #include <queue>
 #include <set>
+#include <tr1/unordered_map>
 
 class atomList_t;
 class atomListHash_t;
@@ -204,7 +205,7 @@ class atomMinMBackwardHeuristic_t : public heuristic_t
       }
   };
 
-  class hash_t : public hashing::hash_map<const atomList_t*,ushort_t,alist_hash_function,alist_hash_equal> { };
+  class hash_t : public std::tr1::unordered_map<const atomList_t*,ushort_t,alist_hash_function,alist_hash_equal> { };
 
 public:
   class system_t

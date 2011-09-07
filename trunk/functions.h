@@ -2,15 +2,15 @@
 #define FUNCTIONS_H
 
 #include "types.h"
-#include "hashing.h"
 #include <iostream>
 #include <map>
 #include <string>
 #include <vector>
+#include <tr1/unordered_set>
 
 typedef int Function;
 
-class FunctionSet : public hashing::hash_set<Function> { };
+class FunctionSet : public std::tr1::unordered_set<Function> { };
 
 class FunctionTable
 {
