@@ -16,8 +16,6 @@ INCLUDE	=	#-I ../mdpsim-1.1
 CC	=	gcc
 C++	=	g++
 YACC	=	yacc -d
-#CC	=	gcc
-#C++	=	g++
 LEX	=	flex
 
 
@@ -43,7 +41,7 @@ lexer.cc:	lexer.l
 		$(C++) $(CFLAGS) $(INCLUDE) -c $<
 
 clean:
-		rm -f *.o *~ planner
+		rm -f *.o *~ planner parser.cc parser.h lexer.cc
 
 dist:
 		tar -cvf - Makefile.* report.awk code.scm *.c *.cc *.h *.y *.l | gzip -c > ../dist.tgz

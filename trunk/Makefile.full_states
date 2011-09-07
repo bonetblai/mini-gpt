@@ -8,11 +8,9 @@ CFLAGS	=	-g -Wall -DMEM_DEBUG -DFULL_STATES
 #CFLAGS	=	-O3 -Wall -DNDEBUG -DFULL_STATES
 LIBS	=	-lnsl -lsocket
 INCLUDE	=	#-I ../mdpsim-1.1
-CC	=	/opt/gcc-2.95.3/bin/gcc
-C++	=	/opt/gcc-2.95.3/bin/g++
-YACC	=	/usr/ccs/bin/yacc -d
-#CC	=	gcc
-#C++	=	g++
+CC	=	gcc
+C++	=	g++
+YACC	=	yacc -d
 LEX	=	flex
 
 
@@ -42,7 +40,7 @@ clean-version:
 		   hash.o heuristics.o main.o planners.o problems.o
 
 clean:
-		rm -f *.o *~
+		rm -f *.o *~ planner parser.cc parser.h lexer.cc
 
 dist:
 		tar -cvf - Makefile.* *.c *.cc *.h *.y *.l | gzip -c > ../dist.tgz
